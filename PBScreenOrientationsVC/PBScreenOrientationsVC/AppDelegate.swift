@@ -40,6 +40,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        guard let _ = window?.rootViewController?.presentedViewController as? ScreenOrientationVC else { return .portrait }
+        
+        return .all
+    }
+    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        guard UIDevice.current.userInterfaceIdiom == .phone else {
+//            return .all
+//        }
+//        
+//        guard let _ = window?.rootViewController?.presentedViewController as? AutoOrientation
+//            else { return .portrait }
+//        
+//        return .allButUpsideDown
+//    }
 
 
 }
