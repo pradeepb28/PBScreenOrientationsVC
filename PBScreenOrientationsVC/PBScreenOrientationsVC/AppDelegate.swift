@@ -43,22 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         
-        guard let _ = window?.rootViewController?.presentedViewController as? ScreenOrientationVC else { return .portrait }
+        if let  _ = window?.rootViewController as? ScreenOrientationVC {
+            return .all
+        }
         
-        return .all
+        if let _ = window?.rootViewController?.presentedViewController as? ScreenOrientationVC {
+            return .all
+        }
+        
+        return .portrait
+        
     }
     
-//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-//        guard UIDevice.current.userInterfaceIdiom == .phone else {
-//            return .all
-//        }
-//        
-//        guard let _ = window?.rootViewController?.presentedViewController as? AutoOrientation
-//            else { return .portrait }
-//        
-//        return .allButUpsideDown
-//    }
-
-
 }
 

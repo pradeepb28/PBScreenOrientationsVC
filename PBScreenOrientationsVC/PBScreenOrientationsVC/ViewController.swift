@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: ScreenOrientationVC {
+class RootViewController: ScreenOrientationVC { }
 
-    
-}
+class PresentedViewController: ScreenOrientationVC {}
 
+class PotraitViewController: UIViewController {}
