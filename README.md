@@ -1,4 +1,4 @@
 # PBScreenOrientationsVC
 
 Objective: 
-To support all types of device orientations to an existing project that is built on one sided device orientation in an easy way.
+If your app is built to support only for portrait orientation, but do you also need to show a particular screen in all orientations, then this repo gives you an example how to handle it easily.
